@@ -1,0 +1,23 @@
+--- 
+  - name: Base repos
+    yum:
+      name:
+        - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+
+  - name: Install base packages
+    yum:
+      name:
+        - git
+        - vim
+        - telnet
+        - mlocate
+        - net-tools
+        - iptables-services
+        - wget
+        - ntp
+        - ntpdate
+        - libselinux-python
+
+  - name: Update system packages (yum update)
+    yum: name=* state=latest
